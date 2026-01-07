@@ -1,0 +1,49 @@
+{
+  "name": "@your-org/mcp-server-sfmc",
+  "version": "1.0.0",
+  "description": "MCP server for managing Azure Service Fabric Managed Clusters",
+  "license": "MIT",
+  "author": "Your Organization",
+  "type": "module",
+  "bin": {
+    "mcp-server-template": "dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "preinstall": "npm config set registry https://registry.npmjs.org/",
+    "prebuild": "node -p \"'export const packageVersion = ' + JSON.stringify(require('./package.json').version) + ';\\n'\" > src/version.ts && prettier --write src/version.ts",
+    "build": "tsc && shx chmod +x dist/*.js",
+    "prepare": "npm run build",
+    "watch": "tsc --watch",
+    "inspect": "npx @modelcontextprotocol/inspector node dist/index.js",
+    "start": "node dist/index.js",
+    "format": "prettier --write .",
+    "format-check": "prettier --check .",
+    "lint": "eslint src/**/*.ts",
+    "lint-fix": "eslint src/**/*.ts --fix",
+    "clean": "shx rm -rf dist",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.20.2",
+    "@azure/identity": "^4.0.0",
+    "yargs": "^18.0.0",
+    "zod": "^3.25.63",
+    "zod-to-json-schema": "^3.24.5"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/inspector": "^0.17.0",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^22",
+    "@types/yargs": "^17.0.33",
+    "eslint": "^9.17.0",
+    "eslint-config-prettier": "^10.1.8",
+    "jest": "^30.0.2",
+    "prettier": "^3.6.2",
+    "shx": "^0.4.0",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.45.0"
+  }
+}

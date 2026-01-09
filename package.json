@@ -6,8 +6,9 @@
   "author": "Your Organization",
   "type": "module",
   "bin": {
-    "mcp-server-template": "dist/index.js"
+    "mcp-server-sfmc": "dist/index.js"
   },
+  "main": "dist/index.js",
   "files": [
     "dist"
   ],

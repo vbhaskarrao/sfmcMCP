@@ -107,6 +107,31 @@ Then open http://localhost:5173 in your browser.
 }
 ```
 
+## Using with VS Code
+
+1. Create `.vscode/settings.json` in your workspace:
+
+```json
+{
+  "mcp.servers": {
+    "service-fabric": {
+      "command": "node",
+      "args": [
+        "${workspaceFolder}/dist/index.js",
+        "--subscription-id",
+        "YOUR-SUBSCRIPTION-ID"
+      ]
+    }
+  }
+}
+```
+
+2. Reload VS Code window (Ctrl+Shift+P → "Reload Window")
+
+3. Use the chat interface or command palette to interact with Service Fabric clusters
+
+For detailed VS Code setup, see [VSCODE_SETUP.md](VSCODE_SETUP.md).
+
 ## Using with Claude Desktop
 
 1. Find your Claude Desktop config file:

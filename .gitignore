@@ -13,7 +13,8 @@ dist/
 .env.*.local
 
 # IDE
-.vscode/
+.vscode/*
+!.vscode/settings.json.example
 .idea/
 *.swp
 *.swo

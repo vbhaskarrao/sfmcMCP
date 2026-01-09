@@ -94,15 +94,37 @@ npm run inspect
 
 Then interact with the server at http://localhost:5173.
 
-## Configuration for Claude Desktop
+## IDE Integration
+
+### VS Code Integration
+
+For VS Code setup, see the detailed guide: [VSCODE_SETUP.md](VSCODE_SETUP.md)
+
+**Quick Setup:** Create or edit `.vscode/settings.json` in your workspace:
+
+```json
+{
+  "mcp.servers": {
+    "service-fabric": {
+      "command": "node",
+      "args": [
+        "${workspaceFolder}/dist/index.js",
+        "--subscription-id",
+        "your-subscription-id"
+      ]
+    }
+  }
+}
+```
+
+A template is provided at [.vscode/settings.json.example](.vscode/settings.json.example).
+
+### Claude Desktop Integration
 
 Add this configuration to your Claude Desktop config file:
 
-### macOS
-`~/Library/Application Support/Claude/claude_desktop_config.json`
-
-### Windows
-`%APPDATA%\Claude\claude_desktop_config.json`
+**macOS:** `~/Library/Application Support/Claude/claude_desktop_config.json`
+**Windows:** `%APPDATA%\Claude\claude_desktop_config.json`
 
 ```json
 {

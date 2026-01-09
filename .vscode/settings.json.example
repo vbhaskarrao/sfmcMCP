@@ -1,0 +1,17 @@
+{
+  "mcp.servers": {
+    "service-fabric": {
+      "command": "node",
+      "args": [
+        "${workspaceFolder}/dist/index.js",
+        "--subscription-id",
+        "your-subscription-id-here"
+      ],
+      "env": {
+        "AZURE_TENANT_ID": "your-tenant-id",
+        "AZURE_CLIENT_ID": "your-client-id",
+        "AZURE_CLIENT_SECRET": "your-client-secret"
+      }
+    }
+  }
+}
